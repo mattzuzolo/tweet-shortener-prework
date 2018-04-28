@@ -21,7 +21,6 @@ def word_substituter (tweet)
   
 
   updated_tweet_array = []
-  #the_index = nil
   
     tweet.split(" ").map do |word|
         if dictionary.keys.include?(word.downcase)
