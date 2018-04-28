@@ -20,7 +20,6 @@ end
 def word_substituter (tweet)
   
 
-  changes_hash_values = dictionary.values
   updated_tweet_array = []
   the_index = nil
   
