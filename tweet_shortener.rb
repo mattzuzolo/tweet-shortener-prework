@@ -19,14 +19,14 @@ end
 
 def word_substituter (tweet)
   
-  changes_hash_keys = dictionary.keys
+  #changes_hash_keys = dictionary.keys
   changes_hash_values = dictionary.values
   updated_tweet_array = []
   the_index = nil
   
     tweet.split(" ").map do |word|
         if dictionary.keys.include?(word.downcase)
-          the_index = changes_hash_keys.index {|i| i.include?(word.downcase)}
+          the_index = dictionary.keys.index {|i| i.include?(word.downcase)}
           updated_tweet_array << changes_hash_values[the_index]
         else
           updated_tweet_array << word
