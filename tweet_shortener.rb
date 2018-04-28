@@ -19,7 +19,6 @@ end
 
 def word_substituter (tweet)
   
-
   updated_tweet_array = []
   
     tweet.split(" ").map do |word|
