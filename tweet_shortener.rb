@@ -19,16 +19,12 @@ end
 
 def word_substituter (tweet)
   
-  tweet_array = tweet.split(" ")
-  changes_hash_keys = dictionary.keys
-  changes_hash_values = dictionary.values
   updated_tweet_array = []
-  the_index = nil
   
-    tweet_array.map do |word|
-        if changes_hash_keys.include?(word.downcase)
-          the_index = changes_hash_keys.index {|i| i.include?(word.downcase)}
-          updated_tweet_array << changes_hash_values[the_index]
+    tweet.split(" ").map do |word|
+        if dictionary.keys.include?(word.downcase)
+          the_index = dictionary.keys.index {|i| i.include?(word.downcase)}
+          updated_tweet_array << dictionary.values[the_index]
         else
           updated_tweet_array << word
         end
@@ -39,7 +35,6 @@ end
 
 
 def bulk_tweet_shortener (tweet_list)
-  
     tweet_list.each do |message|
       puts word_substituter(message)
     end  
@@ -62,7 +57,6 @@ end
 def shortened_tweet_truncator (tweet)
   
   if tweet.length > 140
-
       new_tweet = word_substituter(tweet)
       
         if new_tweet.length > 140
@@ -74,7 +68,6 @@ def shortened_tweet_truncator (tweet)
     tweet
       
   end 
-  
 end  
       
       
